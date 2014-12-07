@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Snapcat</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+  	
+    <link href="/public/style.css" rel="stylesheet">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="mailto:jorge@izqui.me">Careers</a></li>
+           <li><a href="mailto:jorge@izqui.me">Pricing</a></li>
+            <li><a href="mailto:jorge@izqui.me">Enterprise</a></li>
+             <li><a href="mailto:jorge@izqui.me">Get a cat</a></li>
+        </ul>
+        <h3 class="text-muted">Snapcat</h3>
+      </div>
+
+      <div class="jumbotron">
+         <div align="center"><img src="http://assets3.thefourohfive.com/data/17115/feature/snapcat.jpg?1371634292"/></div>
+         </br>
+        <p align="center"><b>Snapcat</b> is an app that provides secure messaging among cats</p>
+
+        <div align="center">
+          <br>
+          <p><a id="login" class="btn btn-lg btn-success" role="button">Login</a></p>
+           <small>© 2015 Startup SL</small>
+           <br>
+           <img width="300" src="http://cmsmart.net/blog/wp-content/uploads/App-Store-Badge.png"/>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+  $(function (){
+  	$("#login").click(function (e){
+  		var baseurl = prompt("Enter your krypte server url:")
+  		window.location = "http://"+baseurl+"/auth?root="+baseurl+"&provider=Snapcat&callback="+document.URL+'login&permissions=["name","email"]'
+  	})
+  })
+  </script>
+</html>
