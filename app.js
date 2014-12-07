@@ -8,7 +8,7 @@ var app = express()
 app.set('x-powered-by', false);
 app.use(logger('combined'))
 app.set('view engine', 'ejs')
-app.use('public', express.static(__dirname + '/public'))
+app.use(express.static(__dirname + '/public'))
 
 app.get('/', function (req, res){
 	res.render('index')
@@ -37,6 +37,10 @@ app.get('/login', function (req, res){
 	} else {
 		res.send("No token")
 	}
+})
+
+app.get('/landing', function (req, res) {
+	res.render('landing')
 })
 
 app.listen(port, function () {
